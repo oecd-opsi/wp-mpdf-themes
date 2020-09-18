@@ -659,7 +659,13 @@ a {
 }
 
 .balance-graph {
-  margin-bottom: 120px;
+  /* margin-bottom: -90px; */
+}
+
+.pmc-text {
+	text-align: left;
+	margin-top: 0 !important;
+	padding: 0 !important;
 }
 
 #download-and-share,

@@ -47,7 +47,8 @@
   $organisation = $general_questions['organisation'];
 
   //* Name
-  $name = get_the_author_meta( 'display_name' );
+  $name = get_the_author_meta( 'display_name', $post->post_author );
+
 
   //* Date
   $submission_date = get_field( 'submission_date' );
@@ -2117,9 +2118,10 @@
                     }
                     ?>
                     </div>
-										<!-- <pagebreak> -->
 
+										<div class="pmc-text">
                     <?php the_field( 'portfolio_management_capability_text', 'option' ); ?>
+										</div>
 
                   </div>
 
@@ -2152,28 +2154,28 @@
                     // Determine list title
                     switch ($key) {
                       case '1-enh':
-                        $list_title = 'Enhancement-oriented projects';
+                        $list_title = 'Enhancement-oriented';
                         break;
                       case '2-mis':
-                        $list_title = 'Mission-oriented projects';
+                        $list_title = 'Mission-oriented';
                         break;
                       case '3-ant':
-                        $list_title = 'Anticipatory-oriented projects';
+                        $list_title = 'Anticipatory-oriented';
                         break;
                       case '4-ada':
-                        $list_title = 'Adaptive-oriented projects';
+                        $list_title = 'Adaptive-oriented';
                         break;
                       case '5-sus':
-                        $list_title = 'Sustaining change projects';
+                        $list_title = 'Sustaining change';
                         break;
                       case '6-tra':
-                        $list_title = 'Transformative change projects';
+                        $list_title = 'Transformative change';
                         break;
                       case '7-dis':
-                        $list_title = 'Disruptive change projects';
+                        $list_title = 'Disruptive change';
                         break;
                       case '8-opt':
-                        $list_title = 'Optimising change projects';
+                        $list_title = 'Optimising change';
                         break;
                       case '9-mix':
                         $list_title = 'Mixed or unclear';
@@ -2196,6 +2198,7 @@
                 </div>
 								<pagebreak>
                 <div class="modules-graphs-comparison row">
+									<h2 class="section-title">Combined Results</h2>
                   <div class="col-sm-6">
                     <h3>Organisational Capacities</h3>
                     <img src="<?php echo $mod2d1_file_output_url ?>" alt="">
@@ -2203,6 +2206,9 @@
                   <div class="col-sm-6">
                     <h3>Project Portfolio</h3>
                     <img src="<?php echo $mod2_file_output_url ?>" alt="">
+                  </div>
+									<div class="module-2-combined-text">
+                    <?php echo get_field( 'combined_results_text', 'option' ); ?>
                   </div>
                 </div>
               </section>
